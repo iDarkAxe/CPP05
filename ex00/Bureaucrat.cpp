@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:18:34 by ppontet           #+#    #+#             */
-/*   Updated: 2025/06/28 14:56:01 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/06/28 18:12:11 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ Bureaucrat &Bureaucrat::operator++(void)
 	try
 	{
 		if (this->_grade - 1 < 1)
-			throw std::out_of_range("Grade too high, cannot increment.");
+			throw GradeTooHighException();
 		this->_grade -= 1;
 	}
 	catch (std::exception & e)
@@ -75,7 +75,7 @@ Bureaucrat Bureaucrat::operator++(int)
 	try
 	{
 		if (this->_grade - 1 < 1)
-			throw std::out_of_range("Grade too high, cannot increment.");
+			throw GradeTooHighException();
 		this->_grade -= 1;
 	}
 	catch (std::exception & e)
@@ -92,7 +92,7 @@ Bureaucrat &Bureaucrat::operator--(void)
 	try
 	{
 		if (this->_grade + 1 > 150)
-			throw std::out_of_range("Grade too low, cannot decrement.");
+			throw GradeTooLowException();
 		this->_grade += 1;
 	}
 	catch (std::exception & e)
@@ -111,7 +111,7 @@ Bureaucrat Bureaucrat::operator--(int)
 	try
 	{
 		if (this->_grade + 1 > 150)
-			throw std::out_of_range("Grade too low, cannot decrement.");
+			throw GradeTooLowException();
 		this->_grade += 1;
 	}
 	catch (std::exception & e)
@@ -120,6 +120,17 @@ Bureaucrat Bureaucrat::operator--(int)
 		return (*this);
 	}
 	return (temp);
+}
+
+// Exceptions
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return ("Grade too high!");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return ("Grade too low!");
 }
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat const &crat) 
