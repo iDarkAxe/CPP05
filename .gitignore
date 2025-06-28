@@ -1,0 +1,11 @@
+**/a.out
+**/lib/*
+**/*.o
+**/*.d
+**/.obj/
+.vscode/settings.json
+
+ex00/Bureaucrat
+ex01/Form
+ex02/UselessForms
+ex03/Intern
