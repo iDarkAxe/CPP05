@@ -8,8 +8,11 @@ class Bureaucrat
 	private:
 		const std::string _name;
 		int _grade;
+		void checkGrade(int grade) const;
 
 	public:
+		static const int MAX_GRADE = 1;
+		static const int MIN_GRADE = 150;
 		Bureaucrat();
 		Bureaucrat(std::string name);
 		Bureaucrat(std::string name, int grade);

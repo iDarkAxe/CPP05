@@ -3,6 +3,8 @@
 
 #include <string>
 
+
+
 class Form
 {
 	private:
@@ -11,7 +13,12 @@ class Form
 		const int _signGrade;
 		const int _executeGrade;
 
+		void checkGrade(int grade) const;
+
 	public:
+		static const int MAX_GRADE = 1;
+		static const int MIN_GRADE = 150;
+
 		Form();
 		Form(std::string name);
 		Form(std::string name, int signGrade, int executeGrade);

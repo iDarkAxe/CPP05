@@ -6,23 +6,24 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:18:34 by ppontet           #+#    #+#             */
-/*   Updated: 2025/06/28 18:12:11 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/06/29 17:11:04 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
 
-Bureaucrat::Bureaucrat() : _name("Basic-Bureaucrat"), _grade(150)
+Bureaucrat::Bureaucrat() : _name("Basic-Bureaucrat"), _grade(MIN_GRADE)
 {
 }
 
-Bureaucrat::Bureaucrat(std::string name) : _name(name), _grade(150)
+Bureaucrat::Bureaucrat(std::string name) : _name(name), _grade(MIN_GRADE)
 {
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
+	this->checkGrade(grade);
 }
 
 Bureaucrat::~Bureaucrat()
@@ -120,6 +121,14 @@ Bureaucrat Bureaucrat::operator--(int)
 		return (*this);
 	}
 	return (temp);
+}
+
+void Bureaucrat::checkGrade(int grade) const
+{
+	if (grade < MAX_GRADE)
+		throw Bureaucrat::GradeTooHighException();
+	if (grade > MIN_GRADE)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 // Exceptions

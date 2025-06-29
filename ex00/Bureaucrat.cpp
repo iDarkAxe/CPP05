@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:18:34 by ppontet           #+#    #+#             */
-/*   Updated: 2025/06/28 18:12:11 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/06/29 17:33:20 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,14 @@ Bureaucrat Bureaucrat::operator--(int)
 		return (*this);
 	}
 	return (temp);
+}
+
+void Bureaucrat::checkGrade(int grade) const
+{
+	if (grade < MAX_GRADE)
+		throw Bureaucrat::GradeTooHighException();
+	if (grade > MIN_GRADE)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 // Exceptions
