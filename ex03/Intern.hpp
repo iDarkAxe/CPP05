@@ -23,6 +23,11 @@ class Intern
 		public:
 			const char* what() const throw();
 	};
+	class NoNameException : public std::exception 
+	{
+		public:
+			const char* what() const throw();
+	};
 };
 
 std::ostream &operator<<(std::ostream &o, Intern const &crat);

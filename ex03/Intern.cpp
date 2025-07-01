@@ -44,25 +44,20 @@ AForm *Intern::makeForm(std::string formName, std::string target) const
 		"presidential pardon"
 	};
 	if (formName.empty())
-	{
-		std::cout << "Error: Intern couldn't create form with empty name." << std::endl;
-		return NULL;
-	}
+		throw Intern::NoNameException();
 	size_t index = 0;
-	while (formName != formNamesList[index] && index < this->NBR_OF_FORMS)
+	while (index < this->NBR_OF_FORMS && formName != formNamesList[index])
 		index++;
-
 	switch (index)
 	{
 		case 0:
-			return new ShrubberyCreationForm(target);
+			return new ShrubberyCreationForm("DefaultShrubberyCreationForm", target);
 		case 1:
-			return new RobotomyRequestForm(target);
+			return new RobotomyRequestForm("DefaultRobotomyRequestForm", target);
 		case 2:
-			return new PresidentialPardonForm(target);
+			return new PresidentialPardonForm("DefaultPresidentialPardonForm", target);
 		default:
-			std::cout << "Error: Intern couldn't create form '" << formName << "'." << std::endl;
-			return NULL;
+			throw Intern::FormNotFoundException();
 	}
 }
 
@@ -72,10 +67,14 @@ const char* Intern::FormNotFoundException::what() const throw()
     return ("Error: Intern couldn't create form as it doesn't exist.");
 }
 
+const char* Intern::NoNameException::what() const throw()
+{
+    return ("Error: Intern couldn't find a name of form.");
+}
 
 std::ostream &operator<<(std::ostream &o, Intern const &intern) 
 {
 	(void)intern;
-	o << "Simple Intern ";
+	o << "Simple Intern can't say it's name as no one asked for it.";
 	return (o);
 }
