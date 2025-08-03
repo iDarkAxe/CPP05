@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:16:52 by ppontet           #+#    #+#             */
-/*   Updated: 2025/06/30 11:41:19 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/08/03 10:04:20 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,10 @@ void ShrubberyCreationForm::execute(class Bureaucrat const &executor) const
 	std::ofstream os(filename.c_str());
 	if (os.is_open() == false)
 	{
-		std::cerr << "Error: could not open file " << this->_target << std::endl;
+		std::cout << "Error: could not open file " << this->_target << std::endl;
 		return;
 	}
+	write_tree(os);
 	write_tree(os);
 }
 
