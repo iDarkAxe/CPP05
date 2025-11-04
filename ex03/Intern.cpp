@@ -57,16 +57,12 @@ AForm *Intern::makeForm(std::string formName, std::string target) const
 		case 2:
 			return new PresidentialPardonForm("DefaultPresidentialPardonForm", target);
 		default:
-			throw Intern::FormNotFoundException();
+			std::cout << "Error: Intern couldn't create form as it doesn't exist." << std::endl;
+			return (NULL);
 	}
 }
 
 // Exceptions
-const char* Intern::FormNotFoundException::what() const throw()
-{
-    return ("Error: Intern couldn't create form as it doesn't exist.");
-}
-
 const char* Intern::NoNameException::what() const throw()
 {
     return ("Error: Intern couldn't find a name of form.");

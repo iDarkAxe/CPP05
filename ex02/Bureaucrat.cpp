@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:18:34 by ppontet           #+#    #+#             */
-/*   Updated: 2025/11/04 15:02:43 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/04 16:24:09 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,11 @@ void Bureaucrat::checkGrade(int grade) const
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > MIN_GRADE)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void Bureaucrat::signForm(AForm& form)
+{
+	form.beSigned(*this);
 }
 
 void Bureaucrat::executeForm(AForm const & form)

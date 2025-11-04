@@ -2,6 +2,7 @@
 # define BUREAUCRAT_HPP
 
 #include <string>
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -24,6 +25,7 @@ class Bureaucrat
 
 		std::string getName() const;
 		int	getGrade() const;
+		void signForm(Form &form);
 		Bureaucrat &operator++(void);
 		Bureaucrat operator++(int);
 		Bureaucrat &operator--(void);

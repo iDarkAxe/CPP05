@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:18:26 by ppontet           #+#    #+#             */
-/*   Updated: 2025/06/30 12:30:53 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/04 16:26:33 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ int test1_Shrubbery()
 	std::cout << "ExecuteGrade is " << papier.getExecuteGrade() << std::endl;
 	std::cout << papier << std::endl;
 
-	papier.beSigned(NPC);
-	papier.beSigned(NPC2);
+	NPC.signForm(papier);
+	NPC2.signForm(papier);
 	try {
 		papier.execute(NPC2);
 	} 
@@ -121,16 +121,16 @@ int test2_Shrubbery()
 	catch (std::exception &e) {
 		std::cout << "Error: " << NPC.getName() << ": " << e.what() << std::endl;
 	}
-	permis.beSigned(NPC2);
-	permis.beSigned(NPC);
+	NPC2.signForm(permis);
+	NPC.signForm(permis);
 	try {
 		NPC2.executeForm(permis);
 	} 
 	catch (std::exception &e) {
 		std::cout << "Error: " << NPC2.getName() << ": " << e.what() << std::endl;
 	}
-	permis.beSigned(NPC2);
-	permis.beSigned(NPC);
+	NPC2.signForm(permis);
+	NPC.signForm(permis);
 	try {
 		NPC.executeForm(permis);
 	} 
@@ -175,16 +175,16 @@ int test1_Robotomy()
 	catch (std::exception &e) {
 		std::cout << "Error: " << NPC.getName() << ": " << e.what() << std::endl;
 	}
-	robotomie.beSigned(NPC2);
-	robotomie.beSigned(NPC);
+	NPC2.signForm(robotomie);
+	NPC.signForm(robotomie);
 	try {
 		NPC2.executeForm(robotomie);
 	} 
 	catch (std::exception &e) {
 		std::cout << "Error: " << NPC2.getName() << ": " << e.what() << std::endl;
 	}
-	robotomie.beSigned(NPC2);
-	robotomie.beSigned(NPC);
+	NPC2.signForm(robotomie);
+	NPC.signForm(robotomie);
 	try {
 		NPC.executeForm(robotomie);
 	} 
@@ -241,16 +241,16 @@ int test1_PresidentPardon()
 	catch (std::exception &e) {
 		std::cout << "Error: " << NPC.getName() << ": " << e.what() << std::endl;
 	}
-	askForForgiveness.beSigned(NPC2);
-	askForForgiveness.beSigned(NPC);
+	NPC2.signForm(askForForgiveness);
+	NPC.signForm(askForForgiveness);
 	try {
 		NPC2.executeForm(askForForgiveness);
 	} 
 	catch (std::exception &e) {
 		std::cout << "Error: " << NPC2.getName() << ": " << e.what() << std::endl;
 	}
-	askForForgiveness.beSigned(NPC2);
-	askForForgiveness.beSigned(NPC);
+	NPC2.signForm(askForForgiveness);
+	NPC.signForm(askForForgiveness);
 	try {
 		NPC.executeForm(askForForgiveness);
 	} 

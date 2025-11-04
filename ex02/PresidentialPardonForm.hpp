@@ -9,8 +9,6 @@ class PresidentialPardonForm : public AForm
 	private:
 		const std::string _target;
 
-		void checkGrade(int grade) const;
-
 	public:
 		static const int SIGN_GRADE = 25;
 		static const int EXEC_GRADE = 5;

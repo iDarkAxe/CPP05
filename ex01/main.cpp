@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:18:26 by ppontet           #+#    #+#             */
-/*   Updated: 2025/06/29 17:32:16 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/04 16:22:04 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ int main()
 	std::cout << "ExecuteGrade is " << papier.getExecuteGrade() << std::endl;
 	std::cout << papier << std::endl;
 
-	papier.beSigned(NPC);
-	papier.beSigned(NPC2);
+	NPC.signForm(papier);
+	NPC2.signForm(papier);
 	
 	Form permis("Permis de conduire", 10, 12);
-	permis.beSigned(NPC2);
-	permis.beSigned(NPC);
+	NPC2.signForm(permis);
+	NPC.signForm(permis);
 	return 0;
 }
 	
