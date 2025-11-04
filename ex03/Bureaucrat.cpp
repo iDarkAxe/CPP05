@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:18:34 by ppontet           #+#    #+#             */
-/*   Updated: 2025/06/30 11:45:23 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/04 15:04:16 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ Bureaucrat &Bureaucrat::operator++(void)
 {
 	try
 	{
-		if (this->_grade - 1 < 1)
+		if (this->_grade - 1 < MAX_GRADE)
 			throw GradeTooHighException();
 		this->_grade -= 1;
 	}
@@ -75,7 +75,7 @@ Bureaucrat Bureaucrat::operator++(int)
 
 	try
 	{
-		if (this->_grade - 1 < 1)
+		if (this->_grade - 1 < MAX_GRADE)
 			throw GradeTooHighException();
 		this->_grade -= 1;
 	}
@@ -92,7 +92,7 @@ Bureaucrat &Bureaucrat::operator--(void)
 {
 	try
 	{
-		if (this->_grade + 1 > 150)
+		if (this->_grade + 1 > MIN_GRADE)
 			throw GradeTooLowException();
 		this->_grade += 1;
 	}
@@ -111,7 +111,7 @@ Bureaucrat Bureaucrat::operator--(int)
 
 	try
 	{
-		if (this->_grade + 1 > 150)
+		if (this->_grade + 1 > MIN_GRADE)
 			throw GradeTooLowException();
 		this->_grade += 1;
 	}
