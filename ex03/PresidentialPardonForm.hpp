@@ -14,8 +14,7 @@ class PresidentialPardonForm : public AForm
 		static const int EXEC_GRADE = 5;
 
 		PresidentialPardonForm();
-		PresidentialPardonForm(std::string name);
-		PresidentialPardonForm(std::string name, std::string target);
+		PresidentialPardonForm(std::string target);
 		~PresidentialPardonForm();
 		PresidentialPardonForm(const PresidentialPardonForm &f);
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);

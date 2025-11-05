@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:16:52 by ppontet           #+#    #+#             */
-/*   Updated: 2025/08/03 09:51:25 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/05 11:31:19 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : AForm(name, this->SIGN_GRADE, this->EXEC_GRADE), _target("DefaultTarget")
-{
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name, std::string target) : AForm(name, this->SIGN_GRADE, this->EXEC_GRADE), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", this->SIGN_GRADE, this->EXEC_GRADE), _target(target)
 {
 }
 

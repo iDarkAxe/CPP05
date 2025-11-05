@@ -51,11 +51,11 @@ AForm *Intern::makeForm(std::string formName, std::string target) const
 	switch (index)
 	{
 		case 0:
-			return new ShrubberyCreationForm("DefaultShrubberyCreationForm", target);
+			return new ShrubberyCreationForm(target);
 		case 1:
-			return new RobotomyRequestForm("DefaultRobotomyRequestForm", target);
+			return new RobotomyRequestForm(target);
 		case 2:
-			return new PresidentialPardonForm("DefaultPresidentialPardonForm", target);
+			return new PresidentialPardonForm(target);
 		default:
 			std::cout << "Error: Intern couldn't create form as it doesn't exist." << std::endl;
 			return (NULL);

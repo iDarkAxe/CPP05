@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:16:52 by ppontet           #+#    #+#             */
-/*   Updated: 2025/06/30 12:20:25 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/05 11:03:35 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,7 @@ RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", this->
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string name) : AForm(name, this->SIGN_GRADE, this->EXEC_GRADE), _target("DefaultTarget")
-{
-}
-
-RobotomyRequestForm::RobotomyRequestForm(std::string name, std::string target) : AForm(name, this->SIGN_GRADE, this->EXEC_GRADE), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", this->SIGN_GRADE, this->EXEC_GRADE), _target(target)
 {
 }
 

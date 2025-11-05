@@ -14,8 +14,7 @@ class ShrubberyCreationForm : public AForm
 		static const int EXEC_GRADE = 137;
 
 		ShrubberyCreationForm();
-		ShrubberyCreationForm(std::string name);
-		ShrubberyCreationForm(std::string name, std::string target);
+		ShrubberyCreationForm(std::string target);
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm(const ShrubberyCreationForm &f);
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);

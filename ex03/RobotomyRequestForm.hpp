@@ -14,8 +14,7 @@ class RobotomyRequestForm : public AForm
 		static const int EXEC_GRADE = 45;
 
 		RobotomyRequestForm();
-		RobotomyRequestForm(std::string name);
-		RobotomyRequestForm(std::string name, std::string target);
+		RobotomyRequestForm(std::string target);
 		~RobotomyRequestForm();
 		RobotomyRequestForm(const RobotomyRequestForm &f);
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);

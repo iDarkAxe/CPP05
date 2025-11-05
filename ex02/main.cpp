@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:18:26 by ppontet           #+#    #+#             */
-/*   Updated: 2025/11/04 16:26:33 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/05 11:36:15 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ int test2_Shrubbery()
 		std::cout << "Error: " << NPC2.getName() << ": " << e.what() << std::endl;
 		return (1);
 	}
-	ShrubberyCreationForm permis("Permis de conduire", "Permis de conduire de John Does");
+	ShrubberyCreationForm permis("Permis de conduire de John Does");
 	try {
 		NPC.executeForm(permis);
 	}
@@ -168,7 +168,7 @@ int test1_Robotomy()
 		std::cout << "Error: " << NPC2.getName() << ": " << e.what() << std::endl;
 		return (1);
 	}
-	RobotomyRequestForm robotomie("Autorisation de Robotomie", "Pichel Molnareff");
+	RobotomyRequestForm robotomie("Pichel Molnareff");
 	try {
 		NPC.executeForm(robotomie);
 	}
@@ -234,7 +234,7 @@ int test1_PresidentPardon()
 		return (1);
 	}
 	
-	PresidentialPardonForm askForForgiveness("Autorisation de Pardon", "Joe Didn't");
+	PresidentialPardonForm askForForgiveness("Joe Didn't");
 	try {
 		NPC.executeForm(askForForgiveness);
 	}

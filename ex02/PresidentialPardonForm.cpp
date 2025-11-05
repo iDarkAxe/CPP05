@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:16:52 by ppontet           #+#    #+#             */
-/*   Updated: 2025/06/30 12:31:50 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/05 11:03:44 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,7 @@ PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string name) : AForm(name, this->SIGN_GRADE, this->EXEC_GRADE), _target("DefaultTarget")
-{
-}
-
-PresidentialPardonForm::PresidentialPardonForm(std::string name, std::string target) : AForm(name, this->SIGN_GRADE, this->EXEC_GRADE), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", this->SIGN_GRADE, this->EXEC_GRADE), _target(target)
 {
 }
 
