@@ -1,6 +1,6 @@
 # CPP05 #
 
-CPP Module 03 or how to learn C++ from C.
+CPP Module 05 or how to learn C++ from C.
 
 Try/Catch and exceptions
 
@@ -8,6 +8,6 @@ Try/Catch and exceptions
 
 # CPP05 #
 
-CPP Module 03 ou comment apprendre le C++ à partir du C.
+CPP Module 05 ou comment apprendre le C++ à partir du C.
 
 Try/Catch et les exceptions
