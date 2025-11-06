@@ -28,8 +28,6 @@ class RobotomyRequestForm : public AForm
 	};
 };
 
-void robotomization(std::ostream &o, std::string target);
-
 std::ostream &operator<<(std::ostream &o, RobotomyRequestForm const &crat);
 
 #endif

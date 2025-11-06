@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:18:26 by ppontet           #+#    #+#             */
-/*   Updated: 2025/11/04 17:31:29 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/06 10:53:29 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,26 +48,28 @@ int try_all_forms(void)
 	try {
 		rrf = someRandomIntern.makeForm("not existant", "Earth");
 		if (!rrf)
-			throw std::runtime_error("");
+			throw 1;
 		std::cout << *rrf << std::endl;
 		delete rrf;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
+	catch (int){}
 	try {
 		rrf = someRandomIntern.makeForm("shrubbery creation", "Wind");
 		if (!rrf)
-			throw std::runtime_error("");
+			throw 1;
 		std::cout << *rrf << std::endl;
 		delete rrf;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
+	catch (int){}
 	
 	try {
 		rrf = someRandomIntern.makeForm("robotomy request", "Fire");
 		if (!rrf)
-			throw std::runtime_error("");
+			throw 1;
 		std::cout << *rrf << std::endl;
 		delete rrf;
 	} catch (std::exception &e) {
@@ -77,12 +79,13 @@ int try_all_forms(void)
 	try {
 		rrf = someRandomIntern.makeForm("presidential pardon", "Water");
 		if (!rrf)
-			throw std::runtime_error("");
+			throw 1;
 		std::cout << *rrf << std::endl;
 		delete rrf;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
+	catch (int){}
 	return (0);
 }
 
@@ -94,11 +97,12 @@ int try_modify_form(void)
 	try {
 		rrf = someRandomIntern.makeForm("robotomy request", "Pachycephalosaurus");	
 		if (!rrf)
-			throw std::runtime_error("");
+			throw 1;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 		return 1;
 	}
+	catch (int){}
 	std::cout << *rrf << std::endl;
 	std::cout << someRandomIntern << std::endl;
 	Bureaucrat trex("T-Rex", 1);

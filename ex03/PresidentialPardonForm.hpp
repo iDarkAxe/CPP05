@@ -28,8 +28,6 @@ class PresidentialPardonForm : public AForm
 	};
 };
 
-void bePardonned(std::ostream &o, std::string target);
-
 std::ostream &operator<<(std::ostream &o, PresidentialPardonForm const &crat);
 
 #endif

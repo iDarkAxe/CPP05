@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:16:52 by ppontet           #+#    #+#             */
-/*   Updated: 2025/11/05 11:03:35 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/06 10:51:10 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <cstdlib>
+
+static void robotomization(std::ostream &o, std::string target);
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", this->SIGN_GRADE, this->EXEC_GRADE), _target("DefaultTarget")
 {
@@ -47,12 +49,6 @@ void RobotomyRequestForm::execute(class Bureaucrat const &executor) const
 	robotomization(std::cout, this->_target);
 }
 
-// Exceptions
-const char* RobotomyRequestForm::CannontExecuteNotSignedException::what() const throw()
-{
-    return ("Error: cannot execute because it is not signed.");
-}
-
 void robotomization(std::ostream &o, std::string target) 
 {
 	int a;
@@ -65,6 +61,12 @@ void robotomization(std::ostream &o, std::string target)
 	else
 		o << "Robotomy failed on "<< target << "!" << std::endl;
 	return ;
+}
+
+// Exceptions
+const char* RobotomyRequestForm::CannontExecuteNotSignedException::what() const throw()
+{
+    return ("Error: cannot execute because it is not signed.");
 }
 
 std::ostream &operator<<(std::ostream &o, RobotomyRequestForm const &RobotomyRequestForm) 

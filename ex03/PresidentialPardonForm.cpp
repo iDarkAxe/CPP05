@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:16:52 by ppontet           #+#    #+#             */
-/*   Updated: 2025/11/05 11:19:01 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/06 10:51:35 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <cstdlib>
+
+static void bePardonned(std::ostream &o, std::string target);
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", this->SIGN_GRADE, this->EXEC_GRADE), _target("DefaultTarget")
 {

@@ -28,8 +28,6 @@ class ShrubberyCreationForm : public AForm
 	};
 };
 
-void write_tree(std::ostream &o);
-
 std::ostream &operator<<(std::ostream &o, ShrubberyCreationForm const &crat);
 
 #endif

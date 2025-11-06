@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:16:52 by ppontet           #+#    #+#             */
-/*   Updated: 2025/11/05 11:03:44 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/06 10:52:22 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <cstdlib>
+
+static void bePardonned(std::ostream &o, std::string target);
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", this->SIGN_GRADE, this->EXEC_GRADE), _target("DefaultTarget")
 {
@@ -47,16 +49,16 @@ void PresidentialPardonForm::execute(class Bureaucrat const &executor) const
 	bePardonned(std::cout, this->_target);
 }
 
-// Exceptions
-const char* PresidentialPardonForm::CannontExecuteNotSignedException::what() const throw()
-{
-    return ("Error: cannot execute because it is not signed.");
-}
-
 void bePardonned(std::ostream &o, std::string target) 
 {
 	o << "Presidential Pardon granted to " << target << "!" << std::endl;
 	return ;
+}
+
+// Exceptions
+const char* PresidentialPardonForm::CannontExecuteNotSignedException::what() const throw()
+{
+    return ("Error: cannot execute because it is not signed.");
 }
 
 std::ostream &operator<<(std::ostream &o, PresidentialPardonForm const &PresidentialPardonForm) 

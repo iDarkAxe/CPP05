@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 11:18:34 by ppontet           #+#    #+#             */
-/*   Updated: 2025/11/04 14:56:48 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/06 09:46:01 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,9 @@ int Bureaucrat::getGrade() const
 // Pre-Increment
 Bureaucrat &Bureaucrat::operator++(void) 
 {
-	try
-	{
-		if (this->_grade - 1 < MAX_GRADE)
-			throw GradeTooHighException();
-		this->_grade -= 1;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "Error: " << e.what() << std::endl;
-		return (*this);
-	}
+	if (this->_grade - 1 < MAX_GRADE)
+		throw GradeTooHighException();
+	this->_grade -= 1;
 	return (*this);
 }
 
@@ -73,34 +65,18 @@ Bureaucrat Bureaucrat::operator++(int)
 {
 	Bureaucrat temp(*this);
 
-	try
-	{
-		if (this->_grade - 1 < MAX_GRADE)
-			throw GradeTooHighException();
-		this->_grade -= 1;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "Error: " << e.what() << std::endl;
-		return (*this);
-	}
+	if (this->_grade - 1 < MAX_GRADE)
+		throw GradeTooHighException();
+	this->_grade -= 1;
 	return (temp);
 }
 
 // Pre-Decrement
 Bureaucrat &Bureaucrat::operator--(void) 
 {
-	try
-	{
-		if (this->_grade + 1 > MIN_GRADE)
-			throw GradeTooLowException();
-		this->_grade += 1;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "Error: " << e.what() << std::endl;
-		return (*this);
-	}
+	if (this->_grade + 1 > MIN_GRADE)
+		throw GradeTooLowException();
+	this->_grade += 1;
 	return (*this);
 }
 
@@ -109,17 +85,9 @@ Bureaucrat Bureaucrat::operator--(int)
 {
 	Bureaucrat temp(*this);
 
-	try
-	{
-		if (this->_grade + 1 > MIN_GRADE)
-			throw GradeTooLowException();
-		this->_grade += 1;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "Error: " << e.what() << std::endl;
-		return (*this);
-	}
+	if (this->_grade + 1 > MIN_GRADE)
+		throw GradeTooLowException();
+	this->_grade += 1;
 	return (temp);
 }
 

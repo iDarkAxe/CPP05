@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:16:52 by ppontet           #+#    #+#             */
-/*   Updated: 2025/11/05 11:30:57 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/06 10:50:49 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <cstdlib>
+
+static void robotomization(std::ostream &o, std::string target);
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", this->SIGN_GRADE, this->EXEC_GRADE), _target("DefaultTarget")
 {

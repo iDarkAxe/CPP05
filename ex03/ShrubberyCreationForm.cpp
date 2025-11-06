@@ -6,7 +6,7 @@
 /*   By: ppontet <ppontet@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 18:16:52 by ppontet           #+#    #+#             */
-/*   Updated: 2025/11/05 11:31:19 by ppontet          ###   ########lyon.fr   */
+/*   Updated: 2025/11/06 10:53:09 by ppontet          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 #include <fstream>
+
+static void write_tree(std::ostream &o);
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", this->SIGN_GRADE, this->EXEC_GRADE), _target("DefaultTarget")
 {
@@ -45,23 +47,18 @@ void ShrubberyCreationForm::execute(class Bureaucrat const &executor) const
 	if (executor.getGrade() > this->EXEC_GRADE)
 		throw AForm::GradeTooLowException();
 	std::string filename = this->_target + "_shrubbery";
-	std::ofstream os(filename.c_str());
-	if (os.is_open() == false)
+	std::ofstream ofs(filename.c_str());
+	if (ofs.is_open() == false)
 	{
 		std::cout << "Error: could not open file " << this->_target << std::endl;
 		return;
 	}
-	write_tree(os);
-	write_tree(os);
+	write_tree(ofs);
+	write_tree(ofs);
+	ofs.close();
 }
 
-// Exceptions
-const char* ShrubberyCreationForm::CannontExecuteNotSignedException::what() const throw()
-{
-    return ("Error: cannot execute because it is not signed.");
-}
-
-void write_tree(std::ostream &o) 
+void write_tree(std::ostream &o)
 {
 	o << "         _-_-_\n";
 	o << "      /~~     ~~\\\n";
@@ -78,6 +75,12 @@ void write_tree(std::ostream &o)
 	o << "   | |   | | | \n";
 	o << " -----------------\n";
 	return ;
+}
+
+// Exceptions
+const char* ShrubberyCreationForm::CannontExecuteNotSignedException::what() const throw()
+{
+    return ("Error: cannot execute because it is not signed.");
 }
 
 std::ostream &operator<<(std::ostream &o, ShrubberyCreationForm const &ShrubberyCreationForm) 
